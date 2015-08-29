@@ -9,6 +9,7 @@ if has("autocmd")
    autocmd FileType c,cpp,h inoremap \pl #include<space>""<Esc>i
    autocmd FileType c,cpp,h inoremap \+un using<space>namespace<space>
    autocmd FileType c,cpp,h inoremap { {<Enter>}<Esc>O
+   autocmd FileType c,cpp,h set foldmethod=syntax
 
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
