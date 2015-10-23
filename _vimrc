@@ -87,6 +87,7 @@ inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
 inoremap \o <Esc>o
 inoremap \; <Esc>A;
+inoremap \, <Esc>A,
 inoremap \j <Down>
 inoremap \l <Right>
 
