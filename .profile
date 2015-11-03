@@ -1,6 +1,7 @@
 # Include this; file in .bash_profile with:
 # [[ -r ~/.profile ]] && . ~/.profile
 # Write installation path info in .bash_profile 
+# If this is not wanted, write a .bash_profile that does't include this
 
 clear; echo
 hour=`date +%H`
