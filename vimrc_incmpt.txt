@@ -1,0 +1,51 @@
+# Here are the errors got from Vim 7.3.429
+# Rewrite the vimrc file so that it checks compatibility 
+#   before using advanced features
+
+Error detected while processing /home/game/_vimrc:
+line   25:
+E518: Unknown option: foldmethod=syntax
+line   42:
+E319: Sorry, the command is not available in this version: filetype on
+line   43:
+E319: Sorry, the command is not available in this version: filetype plugin on
+line   44:
+E319: Sorry, the command is not available in this version: filetype indent on
+line   45:
+E319: Sorry, the command is not available in this version: syntax on
+line   55:
+E185: Cannot find color scheme darkblue
+line   86:
+E319: Sorry, the command is not available in this version: function! ClosePair(char)
+line   90:
+E319: Sorry, the command is not available in this version:    return a:char
+line   91:
+E319: Sorry, the command is not available in this version: endfunction
+line   95:
+E319: Sorry, the command is not available in this version: func! CompileRun()
+line   96:
+E319: Sorry, the command is not available in this version:    exec "w"
+line  117:
+E319: Sorry, the command is not available in this version: endfunc
+Error detected while processing /home/game/.vim/bundle/vim-pathogen/autoload/pathogen.vim:
+line   17:
+E319: Sorry, the command is not available in this version: let g:loaded_pathogen = 1
+line   24:
+E319: Sorry, the command is not available in this version: function! pathogen#infect(...) abort " {{{1
+line   25:
+E319: Sorry, the command is not available in this version:   for path in a:0 ? filter(reverse(copy(a:000)), 'type(v:val) == type("")') : ['bundle/{}']
+line   37:
+E319: Sorry, the command is not available in this version:   endfor
+line   38:
+E319: Sorry, the command is not available in this version:   call pathogen#cycle_filetype()
+line   39:
+E319: Sorry, the command is not available in this version:   return ''
+line   40:
+E319: Sorry, the command is not available in this version: endfunction 
+line   43:
+E319: Sorry, the command is not available in this version: function! pathogen#split(path) abort " {{{1
+Error detected while processing /home/game/_vimrc:
+line  125:
+E319: Sorry, the command is not available in this version: call pathogen#infect()
+line  129:
+E319: Sorry, the command is not available in this version: let OmniCpp_MayCompleteScope = 1"""))"""
