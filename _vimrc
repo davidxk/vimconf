@@ -79,6 +79,10 @@ nnoremap <Space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 
 nnoremap \tr :NERDTreeToggle<CR>
 nnoremap \tl :Tlist<CR>
+nnoremap \l :se<Space>columns=120<CR>
+nnoremap \h :se<Space>columns=80<CR>
+nnoremap \j :se<Space>lines=30<CR>
+nnoremap \k :se<Space>lines=24<CR>
 
 ""nnoremap ;; A;<Esc>
 
