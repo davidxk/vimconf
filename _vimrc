@@ -65,7 +65,7 @@ else
    set guifont=Courier_New:h22
    let $VIMFILES=$HOME.'/.vim'
 endif
-colorscheme darkblue 
+colorscheme desert 
 
 "Mappings"
 nnoremap <C-Tab> gt
@@ -145,6 +145,7 @@ call pathogen#infect()
 "OmniCppComplete"
 set completeopt=menu
 let OmniCpp_MayCompleteScope = 1
+colorscheme molokai
 
 "Notes"
 ""Encoding is for Vim's internal use.
