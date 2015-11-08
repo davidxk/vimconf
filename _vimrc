@@ -10,7 +10,7 @@ if has("autocmd")
    autocmd FileType c,cpp,h inoremap \+un using<space>namespace<space>
    autocmd FileType c,cpp,h inoremap { {<Enter>}<Esc>O
 
-   if version >= 740
+   if version >= 7.4
        autocmd FileType c,cpp,h set foldmethod=syntax
    endif
 
@@ -58,7 +58,7 @@ set nocp
 
 "let perl_fold = 1
 "let perl_fold_blocks = 1
-if version >= 740
+if version >= 7.4
     filetype on
     filetype plugin on
     filetype indent on
@@ -117,7 +117,7 @@ inoremap } <C-R>=ClosePair('}')<CR>
 
 
 
-if version >=740
+if version >=7.4
 "START"
 function! ClosePair(char)
    if getline('.')[col('.')-1]==a:char
