@@ -65,7 +65,6 @@ else
    set guifont=Courier_New:h22
    let $VIMFILES=$HOME.'/.vim'
 endif
-colorscheme desert 
 
 "Mappings"
 nnoremap <C-Tab> gt
