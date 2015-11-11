@@ -7,7 +7,7 @@ clear; echo
 hour=`date +%H`
 if [ "$hour" -lt 7 ]; then echo -n "Good Early Morning, "
 elif [ "$hour" -lt 12 ]; then echo -n "Good Morning, "
-elif [ "$hour" -lt 18 ]; then echo -n "Good Afternoot, "
+elif [ "$hour" -lt 18 ]; then echo -n "Good Afternoon, "
 else echo -n "Good Evening, "; fi 
 echo -n "sir. "
 # # use case instead of elif later
