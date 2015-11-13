@@ -14,8 +14,10 @@ if has("autocmd")
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
    autocmd FileType perl set foldmethod=indent
-   autocmd FileType txt set spell
-   autocmd FileType txt set spelllang=en
+   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+   autocmd FileType text set spell
+   autocmd FileType text set spelllang=en
    autocmd FileType html,jsp set tabstop=2
    autocmd FileType html,jsp set shiftwidth=2
 endif
