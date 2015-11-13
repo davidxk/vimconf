@@ -18,8 +18,10 @@ if has("autocmd")
 
    autocmd FileType text set spell
    autocmd FileType text set spelllang=en
-   autocmd FileType html,jsp set tabstop=2
-   autocmd FileType html,jsp set shiftwidth=2
+   autocmd FileType html,jsp,xml set tabstop=2
+   autocmd FileType html,jsp,xml set shiftwidth=2
+   autocmd FileType xml setlocal foldmethod=syntax
+   let g:xml_syntax_folding=1
 endif
 
 if &diff
