@@ -17,10 +17,14 @@ if has("autocmd")
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
    autocmd FileType perl set foldmethod=indent
-   autocmd FileType txt set spell
-   autocmd FileType txt set spelllang=en
-   autocmd FileType html,jsp set tabstop=2
-   autocmd FileType html,jsp set shiftwidth=2
+   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+   autocmd FileType text set spell
+   autocmd FileType text set spelllang=en
+   autocmd FileType html,jsp,xml set tabstop=2
+   autocmd FileType html,jsp,xml set shiftwidth=2
+   autocmd FileType xml setlocal foldmethod=syntax
+   let g:xml_syntax_folding=1
 endif
 
 
