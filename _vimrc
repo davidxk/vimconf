@@ -10,21 +10,23 @@ if has("autocmd")
    autocmd FileType c,cpp,h inoremap \+un using<space>namespace<space>
    autocmd FileType c,cpp,h inoremap { {<Enter>}<Esc>O
 
-   if version >= 7.4
-       autocmd FileType c,cpp,h set foldmethod=syntax
-   endif
-
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
-   autocmd FileType perl set foldmethod=indent
-   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
+   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
    autocmd FileType text set spell
    autocmd FileType text set spelllang=en
    autocmd FileType html,jsp,xml set tabstop=2
    autocmd FileType html,jsp,xml set shiftwidth=2
-   autocmd FileType xml setlocal foldmethod=syntax
-   let g:xml_syntax_folding=1
+
+   if has("syntax")
+	  let perl_fold = 1
+	  let g:xml_syntax_folding = 1
+      autocmd FileType c,cpp,h set foldmethod=syntax
+      autocmd FileType xml setlocal foldmethod=syntax
+      autocmd FileType perl set foldmethod=syntax
+   endif
+
 endif
 
 
@@ -60,14 +62,12 @@ set nocp
 
 
 
-"let perl_fold = 1
 "let perl_fold_blocks = 1
-if version >= 7.4
-    filetype on
-    filetype plugin on
-    filetype indent on
-    syntax on
-    colorscheme desert 
+if has("syntax")
+   filetype on
+   filetype plugin on
+   filetype indent on
+   syntax on
 endif
 
 "gui Settings"
@@ -162,6 +162,7 @@ endfunc
 
 "#Plugins#"
 "vim-pathogen"
+":Helptags			//update help file of plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
