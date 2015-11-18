@@ -101,7 +101,7 @@ nnoremap \j :se<Space>lines=30<CR>
 nnoremap \k :se<Space>lines=24<CR>
 nnoremap \; A;<Esc>
 
-inoremap <C-V> <Esc>pa
+"inoremap <C-V> <Esc>pa
 inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
 inoremap \o <Esc>o
@@ -113,9 +113,6 @@ inoremap \l <Right>
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap " ""<Esc>i
-inoremap ) <C-R>=ClosePair(')')<CR>
-inoremap ] <C-R>=ClosePair(']')<CR>
-inoremap } <C-R>=ClosePair('}')<CR>
 
 
 
@@ -123,6 +120,10 @@ inoremap } <C-R>=ClosePair('}')<CR>
 
 if version >=7.4
 "START"
+inoremap ) <C-R>=ClosePair(')')<CR>
+inoremap ] <C-R>=ClosePair(']')<CR>
+inoremap } <C-R>=ClosePair('}')<CR>
+
 function! ClosePair(char)
    if getline('.')[col('.')-1]==a:char
       return "\<Right>"
