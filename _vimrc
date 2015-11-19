@@ -1,36 +1,40 @@
 "Autocommands"
 if has("autocmd")
+   "$VIMRUNTIME/filetype.vim records all the filetype
+   "The '{' bracket style languages
    autocmd FileType c,cpp,java set tabstop=4
    autocmd FileType c,cpp,java set shiftwidth=4
-   autocmd FileType c,cpp,h nnoremap \pg I#include<space><><Esc>i
-   autocmd FileType c,cpp,h nnoremap \pl I#include<space>""<Esc>i
-   autocmd FileType c,cpp,h nnoremap \+un Iusing<space>namespace<space>
-   autocmd FileType c,cpp,h inoremap \pg #include<space><><Esc>i
-   autocmd FileType c,cpp,h inoremap \pl #include<space>""<Esc>i
-   autocmd FileType c,cpp,h inoremap \+un using<space>namespace<space>
-   autocmd FileType c,cpp,h inoremap { {<Enter>}<Esc>O
+   autocmd FileType c,cpp,java inoremap { {<Enter>}<Esc>O
 
-   autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
+   "C/C++ exclusive
+   autocmd FileType c,cpp inoremap \pg #include<space><><Esc>i
+   autocmd FileType c,cpp inoremap \pl #include<space>""<Esc>i
+   autocmd FileType c,cpp inoremap \+un using<space>namespace<space>
+   autocmd FileType c,cpp nnoremap \pg I#include<space><><Esc>i
+   autocmd FileType c,cpp nnoremap \pl I#include<space>""<Esc>i
+   autocmd FileType c,cpp nnoremap \+un Iusing<space>namespace<space>
+
+   "Script languages
    autocmd FileType perl inoremap { {}<ESC>i
-   autocmd FileType python,perl set tabstop=4
-   autocmd FileType python,perl set shiftwidth=4
+   autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
+   autocmd FileType python,perl,bash set tabstop=4
+   autocmd FileType python,perl,bash set shiftwidth=4
 
-   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+   "Markup languages
    autocmd FileType text set spell
    autocmd FileType text set spelllang=en
    autocmd FileType html,jsp,xml set tabstop=2
    autocmd FileType html,jsp,xml set shiftwidth=2
-
+   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
    if has("syntax")
-	  let perl_fold = 1
-	  let g:xml_syntax_folding = 1
+          let perl_fold = 1
+          let g:xml_syntax_folding = 1
       autocmd FileType c,cpp,h set foldmethod=syntax
       autocmd FileType xml setlocal foldmethod=syntax
       autocmd FileType perl set foldmethod=syntax
       autocmd FileType python set foldmethod=indent
    endif
-
 endif
 
 
@@ -105,7 +109,6 @@ nnoremap \j :se<Space>lines=30<CR>
 nnoremap \k :se<Space>lines=24<CR>
 nnoremap \; A;<Esc>
 
-"inoremap <C-V> <Esc>pa
 inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
 inoremap \o <Esc>o
