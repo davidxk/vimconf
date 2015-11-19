@@ -17,6 +17,9 @@ if has("autocmd")
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
    autocmd FileType perl set foldmethod=indent
+   autocmd FileType python set foldmethod=indent
+   autocmd FileType python set tabstop=4
+   autocmd FileType python set shiftwidth=4
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
    autocmd FileType text set spell
