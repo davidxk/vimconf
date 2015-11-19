@@ -1,7 +1,7 @@
 "Autocommands"
 if has("autocmd")
-   autocmd FileType c,cpp,java,perl set tabstop=4
-   autocmd FileType c,cpp,java,perl set shiftwidth=4
+   autocmd FileType c,cpp,java set tabstop=4
+   autocmd FileType c,cpp,java set shiftwidth=4
    autocmd FileType c,cpp,h nnoremap \pg I#include<space><><Esc>i
    autocmd FileType c,cpp,h nnoremap \pl I#include<space>""<Esc>i
    autocmd FileType c,cpp,h nnoremap \+un Iusing<space>namespace<space>
@@ -10,24 +10,27 @@ if has("autocmd")
    autocmd FileType c,cpp,h inoremap \+un using<space>namespace<space>
    autocmd FileType c,cpp,h inoremap { {<Enter>}<Esc>O
 
-   if version >= 7.4
-       autocmd FileType c,cpp,h set foldmethod=syntax
-   endif
-
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType perl inoremap { {}<ESC>i
-   autocmd FileType perl set foldmethod=indent
-   autocmd FileType python set foldmethod=indent
-   autocmd FileType python set tabstop=4
-   autocmd FileType python set shiftwidth=4
-   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+   autocmd FileType python,perl set tabstop=4
+   autocmd FileType python,perl set shiftwidth=4
 
+   autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
    autocmd FileType text set spell
    autocmd FileType text set spelllang=en
    autocmd FileType html,jsp,xml set tabstop=2
    autocmd FileType html,jsp,xml set shiftwidth=2
-   autocmd FileType xml setlocal foldmethod=syntax
-   let g:xml_syntax_folding=1
+
+
+   if has("syntax")
+	  let perl_fold = 1
+	  let g:xml_syntax_folding = 1
+      autocmd FileType c,cpp,h set foldmethod=syntax
+      autocmd FileType xml setlocal foldmethod=syntax
+      autocmd FileType perl set foldmethod=syntax
+      autocmd FileType python set foldmethod=indent
+   endif
+
 endif
 
 
@@ -63,14 +66,12 @@ set nocp
 
 
 
-"let perl_fold = 1
 "let perl_fold_blocks = 1
-if version >= 7.4
-    filetype on
-    filetype plugin on
-    filetype indent on
-    syntax on
-    colorscheme desert 
+if has("syntax")
+   filetype on
+   filetype plugin on
+   filetype indent on
+   syntax on
 endif
 
 "gui Settings"
@@ -104,7 +105,7 @@ nnoremap \j :se<Space>lines=30<CR>
 nnoremap \k :se<Space>lines=24<CR>
 nnoremap \; A;<Esc>
 
-inoremap <C-V> <Esc>pa
+"inoremap <C-V> <Esc>pa
 inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
 inoremap \o <Esc>o
@@ -116,9 +117,6 @@ inoremap \l <Right>
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap " ""<Esc>i
-inoremap ) <C-R>=ClosePair(')')<CR>
-inoremap ] <C-R>=ClosePair(']')<CR>
-inoremap } <C-R>=ClosePair('}')<CR>
 
 
 
@@ -126,6 +124,10 @@ inoremap } <C-R>=ClosePair('}')<CR>
 
 if version >=7.4
 "START"
+inoremap ) <C-R>=ClosePair(')')<CR>
+inoremap ] <C-R>=ClosePair(']')<CR>
+inoremap } <C-R>=ClosePair('}')<CR>
+
 function! ClosePair(char)
    if getline('.')[col('.')-1]==a:char
       return "\<Right>"
@@ -165,6 +167,7 @@ endfunc
 
 "#Plugins#"
 "vim-pathogen"
+":Helptags			//update help file of plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
