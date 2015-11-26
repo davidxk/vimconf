@@ -25,6 +25,7 @@ if has("autocmd")
       autocmd FileType c,cpp,h set foldmethod=syntax
       autocmd FileType xml setlocal foldmethod=syntax
       autocmd FileType perl set foldmethod=syntax
+      autocmd FileType python set foldmethod=indent
    endif
 
 endif
@@ -50,6 +51,8 @@ set cinoptions=g0
 
 set clipboard+=unnamed
 set dictionary+=$VIMFILES/bundle/dict/words
+
+set display+=lastline
 
 set linebreak
 set incsearch
