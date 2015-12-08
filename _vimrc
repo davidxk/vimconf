@@ -17,8 +17,8 @@ if has("autocmd")
    "Script languages
    autocmd FileType perl inoremap { {}<ESC>i
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
-   autocmd FileType python,perl,bash set tabstop=4
-   autocmd FileType python,perl,bash set shiftwidth=4
+   autocmd FileType python,perl,sh set tabstop=4
+   autocmd FileType python,perl,sh set shiftwidth=4
 
    "Markup languages
    autocmd FileType text set spell
