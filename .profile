@@ -20,7 +20,7 @@ elif [ $rand -le 5 ]; then echo "Everything's going well, I hope. "
 elif [ $rand -le 6 ]; then echo "Such a lovely day, isn't it! "
 elif [ $rand -le 7 ]; then echo "Pleasant day, isn't it! "
 elif [ $rand -le 8 ]; then echo "What a pleasant day it is! "
-elif [ $rand -le 9 ]; then echo "Good to have you back. "
+elif [ $rand -le 9 ]; then echo "It's good to have you back. "
 elif [ $rand -le 10 ]; then echo "Glad to see you back. "
 else echo "Frederic at you service. "; fi
 echo
