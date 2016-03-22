@@ -30,7 +30,7 @@ if has("autocmd")
    "Arduino
    autocmd FileType arduino set tabstop=2
    autocmd FileType arduino set shiftwidth=2
-   autocmd FileType c,cpp,java inoremap { {<Enter>}<Esc>O
+   autocmd FileType arduino inoremap { {<Enter>}<Esc>O
 
    if has("syntax")
           let perl_fold = 1
