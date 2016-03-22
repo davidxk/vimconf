@@ -27,6 +27,11 @@ if has("autocmd")
    autocmd FileType html,jsp,xml set shiftwidth=2
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
+   "Arduino
+   autocmd FileType arduino set tabstop=2
+   autocmd FileType arduino set shiftwidth=2
+   autocmd FileType c,cpp,java inoremap { {<Enter>}<Esc>O
+
    if has("syntax")
           let perl_fold = 1
           let g:xml_syntax_folding = 1
@@ -34,6 +39,7 @@ if has("autocmd")
       autocmd FileType xml setlocal foldmethod=syntax
       autocmd FileType perl set foldmethod=syntax
       autocmd FileType python set foldmethod=indent
+      autocmd FileType arduino set foldmethod=syntax
    endif
 endif
 
