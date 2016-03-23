@@ -28,8 +28,8 @@ if has("autocmd")
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
    "Arduino
-   autocmd FileType arduino set tabstop=2
-   autocmd FileType arduino set shiftwidth=2
+   autocmd FileType arduino set tabstop=4
+   autocmd FileType arduino set shiftwidth=4
    autocmd FileType arduino inoremap { {<Enter>}<Esc>O
 
    if has("syntax")
