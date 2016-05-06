@@ -36,6 +36,7 @@ if has("autocmd")
           let perl_fold = 1
           let g:xml_syntax_folding = 1
       autocmd FileType c,cpp,h set foldmethod=syntax
+      autocmd FileType java set foldmethod=syntax
       autocmd FileType xml setlocal foldmethod=syntax
       autocmd FileType perl set foldmethod=syntax
       autocmd FileType python set foldmethod=indent
