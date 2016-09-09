@@ -35,6 +35,8 @@ if has("autocmd")
    "SQL
    autocmd FileType sql set tabstop=4
    autocmd FileType sql set shiftwidth=4
+   autocmd FileType sql inoremap ( (<Enter>)<Esc>O
+   autocmd FileType sql nnoremap \, A,<Esc>
 
    if has("syntax")
           let perl_fold = 1
