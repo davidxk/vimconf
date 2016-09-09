@@ -32,6 +32,10 @@ if has("autocmd")
    autocmd FileType arduino set shiftwidth=4
    autocmd FileType arduino inoremap { {<Enter>}<Esc>O
 
+   "SQL
+   autocmd FileType sql set tabstop=4
+   autocmd FileType sql set shiftwidth=4
+
    if has("syntax")
           let perl_fold = 1
           let g:xml_syntax_folding = 1
