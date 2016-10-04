@@ -26,6 +26,8 @@ if has("autocmd")
    autocmd FileType html,jsp,xml set tabstop=2
    autocmd FileType html,jsp,xml set shiftwidth=2
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+   autocmd FileType markdown inoremap \> <Esc>A<br>
+   autocmd FileType markdown nnoremap \> A<br><Esc>
 
    "Arduino
    autocmd FileType arduino set tabstop=4
