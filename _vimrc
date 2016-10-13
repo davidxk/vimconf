@@ -28,6 +28,7 @@ if has("autocmd")
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
    autocmd FileType markdown inoremap \> <Esc>A<br>
    autocmd FileType markdown nnoremap \> A<br><Esc>
+   autocmd FileType markdown set foldmethod=marker
 
    "Arduino
    autocmd FileType arduino set tabstop=4
