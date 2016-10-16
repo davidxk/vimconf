@@ -29,6 +29,7 @@ if has("autocmd")
    autocmd FileType markdown inoremap \> <Esc>A<br>
    autocmd FileType markdown nnoremap \> A<br><Esc>
    autocmd FileType markdown set foldmethod=marker
+   autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
 
    "Arduino
    autocmd FileType arduino set tabstop=4
