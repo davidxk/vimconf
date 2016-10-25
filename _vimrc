@@ -30,6 +30,9 @@ if has("autocmd")
    autocmd FileType markdown nnoremap \> A<br><Esc>
    autocmd FileType markdown set foldmethod=marker
    autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
+   if(has("mac"))
+	   autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>
+
 
    "Arduino
    autocmd FileType arduino set tabstop=4
