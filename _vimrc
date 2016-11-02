@@ -173,12 +173,10 @@ endfunction
 ":Helptags			//update help file of plugins
 let g:pathogen_disabled = []
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
 
 "OmniCppComplete"
 set completeopt=menu
 let OmniCpp_MayCompleteScope = 1
-colorscheme molokai
 
 "Taglist"
 if !exists('Tlist_Ctags_Cmd')
@@ -196,6 +194,11 @@ if !exists('Tlist_Ctags_Cmd')
 		call add(g:pathogen_disabled, 'taglist')
 	endif
 endif
+
+"#END of Plugins#"
+call pathogen#infect()
+colorscheme molokai
+
 
 "END"
 endif
