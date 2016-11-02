@@ -30,10 +30,11 @@ if has("autocmd")
    autocmd FileType markdown nnoremap \> A<br><Esc>
    autocmd FileType markdown set foldmethod=marker
    autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
+   autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
+   autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
    if(has("mac"))
 	   autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>
    endif
-
 
    "Arduino
    autocmd FileType arduino set tabstop=4
@@ -163,32 +164,6 @@ function! ClosePair(char)
    return a:char
 endfunction
 
-map <F5> :call CompileRun()<CR>
-inoremap <F5> <Esc>:call CompileRun()<CR>a
-func! CompileRun()
-   exec "w"
-   if &filetype == 'c'
-      exec "!gcc % -o %<"
-      if(has("win32")||has("win64"))
-         exec "! %<"
-      else 
-	     exec "! ./%<"
-      endif
-   elseif &filetype == 'cpp'
-      exec "!g++ % -o %<"
-      if(has("win32")||has("win64"))
-		 exec "! %<"
-      else 
-		  exec "! ./%<"
-      endif
-   elseif &filetype == 'java' 
-      exec "!javac %" 
-      exec "!java %<"
-   elseif &filetype == 'sh'
-      :!./%
-   endif
-endfunc
-
 
 
 
@@ -196,6 +171,7 @@ endfunc
 "#Plugins#"
 "vim-pathogen"
 ":Helptags			//update help file of plugins
+let g:pathogen_disabled = []
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -203,6 +179,23 @@ call pathogen#infect()
 set completeopt=menu
 let OmniCpp_MayCompleteScope = 1
 colorscheme molokai
+
+"Taglist"
+if !exists('Tlist_Ctags_Cmd')
+	if executable('exuberant-ctags')
+		let Tlist_Ctags_Cmd = 'exuberant-ctags'
+	elseif executable('exctags')
+		let Tlist_Ctags_Cmd = 'exctags'
+	elseif executable('ctags')
+		let Tlist_Ctags_Cmd = 'ctags'
+	elseif executable('ctags.exe')
+		let Tlist_Ctags_Cmd = 'ctags.exe'
+	elseif executable('tags')
+		let Tlist_Ctags_Cmd = 'tags'
+	else
+		call add(g:pathogen_disabled, 'taglist')
+	endif
+endif
 
 "END"
 endif
