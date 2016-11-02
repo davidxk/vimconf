@@ -171,6 +171,7 @@ endfunction
 "#Plugins#"
 "vim-pathogen"
 ":Helptags			//update help file of plugins
+"git submodule foreach git pull origin master
 let g:pathogen_disabled = []
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
