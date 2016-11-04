@@ -25,11 +25,14 @@ if has("autocmd")
    autocmd FileType text set spelllang=en
    autocmd FileType html,jsp,xml set tabstop=2
    autocmd FileType html,jsp,xml set shiftwidth=2
+
+   "Markdown language
    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
    autocmd FileType markdown inoremap \> <Esc>A<br>
    autocmd FileType markdown nnoremap \> A<br><Esc>
-   autocmd FileType markdown set foldmethod=marker
    autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
+   autocmd FileType markdown set foldmethod=marker
+   autocmd FileType markdown set spell
    autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
    autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
    if(has("mac"))
