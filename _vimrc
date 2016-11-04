@@ -167,6 +167,12 @@ function! ClosePair(char)
    return a:char
 endfunction
 
+command -nargs=1 Pickonly call DeleteNotContaining(<args>)
+
+function DeleteNotContaining(regex)
+	execute 'g/^\(\(' . a:regex . '\)\@!.\)*$/d'
+endfunction
+
 
 
 
