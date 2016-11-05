@@ -73,7 +73,7 @@ else
    set lines=24 columns=80
 endif
 
-set fileformats=unix,mac,dos
+set fileformats=unix,dos,mac
 
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,cp936
@@ -168,6 +168,7 @@ function! ClosePair(char)
 endfunction
 
 command -nargs=1 Pickonly g/^\(\(<args>\)\@!.\)*$/d
+command -nargs=0 Cdfiledir cd %:p:h
 
 
 
