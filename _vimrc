@@ -2,23 +2,36 @@
 if has("autocmd")
    "$VIMRUNTIME/filetype.vim records all the filetype
    "The '{' bracket style languages
-   autocmd FileType c,cpp,java set tabstop=4
-   autocmd FileType c,cpp,java set shiftwidth=4
-   autocmd FileType c,cpp,java inoremap { {<Enter>}<Esc>O
+   autocmd FileType c,cpp,lex,java set tabstop=4
+   autocmd FileType c,cpp,lex,java set shiftwidth=4
+   autocmd FileType c,cpp,lex,java inoremap { {<Enter>}<Esc>O
 
    "C/C++ exclusive
-   autocmd FileType c,cpp inoremap \pg #include<space><><Esc>i
-   autocmd FileType c,cpp inoremap \pl #include<space>""<Esc>i
-   autocmd FileType c,cpp inoremap \+un using<space>namespace<space>
-   autocmd FileType c,cpp nnoremap \pg I#include<space><><Esc>i
-   autocmd FileType c,cpp nnoremap \pl I#include<space>""<Esc>i
-   autocmd FileType c,cpp nnoremap \+un Iusing<space>namespace<space>
+   autocmd FileType c,cpp,lex,yacc inoremap \pg #include<space><><Esc>i
+   autocmd FileType c,cpp,lex,yacc inoremap \pl #include<space>""<Esc>i
+   autocmd FileType c,cpp,lex,yacc inoremap \+un using<space>namespace<space>
+   autocmd FileType c,cpp,lex,yacc nnoremap \pg I#include<space><><Esc>i
+   autocmd FileType c,cpp,lex,yacc nnoremap \pl I#include<space>""<Esc>i
+   autocmd FileType c,cpp,lex,yacc nnoremap \+un Iusing<space>namespace<space>
+
+   "lex"
+   autocmd FileType lex set cindent
+   autocmd FileType lex,yacc set tabstop=4
+   autocmd FileType lex,yacc set shiftwidth=4
+   autocmd FileType lex,yacc inoremap { {}<Esc>i
+   autocmd BufNewFile,BufFilePre,BufRead *.ypp set filetype=yacc
 
    "Script languages
    autocmd FileType perl inoremap { {}<ESC>i
    autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
    autocmd FileType python,perl,sh set tabstop=4
    autocmd FileType python,perl,sh set shiftwidth=4
+   autocmd FileType python set foldmethod=indent
+
+   "Javascript
+   autocmd FileType javascript set tabstop=4
+   autocmd FileType javascript set shiftwidth=4
+   autocmd FileType javascript inoremap { {<Enter>}<Esc>O
 
    "Markup languages
    autocmd FileType text set spell
@@ -34,7 +47,9 @@ if has("autocmd")
    autocmd FileType markdown set foldmethod=marker
    autocmd FileType markdown set spell
    autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
+   autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
    autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
+   autocmd FileType markdown let b:surround_66 = "\\\\[\r\\\\]"
    if(has("mac"))
 	   autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>
    endif
@@ -51,13 +66,14 @@ if has("autocmd")
    let g:ftplugin_sql_omni_key = '<C-?>'
 
    if has("syntax")
+	  let r_syntax_folding = 1
+	  let sh_fold_enabled = 1
+          let xml_syntax_folding = 1
           let perl_fold = 1
-          let g:xml_syntax_folding = 1
-      autocmd FileType c,cpp,h set foldmethod=syntax
+	  let vimsyn_folding = 'af'
+	  let javaScript_fold = 1
+      autocmd FileType c,cpp,h,lex set foldmethod=syntax
       autocmd FileType java set foldmethod=syntax
-      autocmd FileType xml setlocal foldmethod=syntax
-      autocmd FileType perl set foldmethod=syntax
-      autocmd FileType python set foldmethod=indent
       autocmd FileType arduino set foldmethod=syntax
    endif
 endif
