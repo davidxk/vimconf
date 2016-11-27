@@ -122,12 +122,13 @@ if has("syntax")
 endif
 
 "gui Settings"
+let $VIMFILES=$HOME.'/.vim'
 if(has("win32")||has("win64"))
    set guifont=Courier_New:h18
-   let $VIMFILES=$HOME.'/vimfiles'
+elseif(has("gui_gtk2"))
+   set guifont=Courier\ 18
 else
    set guifont=Courier_New:h22
-   let $VIMFILES=$HOME.'/.vim'
 endif
 
 
