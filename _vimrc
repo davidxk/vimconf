@@ -49,7 +49,7 @@ if has("autocmd")
    autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
    autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
    autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
-   autocmd FileType markdown let b:surround_66 = "\\\\[\r\\\\]"
+   autocmd FileType markdown let b:surround_66 = "**\r**"
    if(has("mac"))
 	   autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>
    endif
@@ -68,10 +68,10 @@ if has("autocmd")
    if has("syntax")
 	  let r_syntax_folding = 1
 	  let sh_fold_enabled = 1
-          let xml_syntax_folding = 1
-          let perl_fold = 1
+	  let xml_syntax_folding = 1
+	  let perl_fold = 1
 	  let vimsyn_folding = 'af'
-	  let javaScript_fold = 1
+	  "let javaScript_fold = 1
       autocmd FileType c,cpp,h,lex set foldmethod=syntax
       autocmd FileType java set foldmethod=syntax
       autocmd FileType arduino set foldmethod=syntax
@@ -184,8 +184,10 @@ function! ClosePair(char)
    return a:char
 endfunction
 
-command -nargs=1 Pickonly g/^\(\(<args>\)\@!.\)*$/d
-command -nargs=0 Cdfiledir cd %:p:h
+if !exists(':Pickonly') && !exists(':ClosePair')
+   command -nargs=1 Pickonly g/^\(\(<args>\)\@!.\)*$/d
+   command -nargs=0 Cdfiledir cd %:p:h
+endif
 
 
 
