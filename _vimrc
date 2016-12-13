@@ -57,8 +57,6 @@ if has("autocmd")
 	autocmd FileType python set foldmethod=indent
 
 	"Markup languages
-	autocmd FileType text set spell
-	autocmd FileType text set spelllang=en
 	autocmd FileType html,jsp,xml set tabstop=2
 	autocmd FileType html,jsp,xml set shiftwidth=2
 
@@ -67,12 +65,13 @@ if has("autocmd")
 	autocmd FileType markdown inoremap \> <Esc>A<br>
 	autocmd FileType markdown nnoremap \> A<br><Esc>
 	autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
-	autocmd FileType markdown set spell
-	autocmd FileType markdown set foldmethod=marker
 	autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
 	autocmd FileType markdown let b:surround_66 = "**\r**"
+	autocmd FileType markdown,text set spell
+	autocmd FileType markdown,text set spelllang=en
+	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
 		"Local marked2 shortcut
 		autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>

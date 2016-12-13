@@ -1,5 +1,9 @@
 # vimconf
-This is my personal vim configurations, including a vimrc file, a dictionary, color schemes and plugins managed with pathogen. 
+This is my personal vim configurations, including a vimrc file, a dictionary, some color schemes and plugins managed with pathogen. It has been maintained for three years, since I started using Vim in my undergrad.
+
+There's a lot of handy personalized configurations in vimrc and it supports folding and syntax highlight for a bunch of languages that I've been working with. I have been using it mainly for my Mac but I try to get it working compatibly with Windows and other Linux systems, as well.
+
+Hope fellow vim-lovers could find something useful here! 
 
 ## Plugins
 * [a.vim](https://github.com/vim-scripts/a.vim)
@@ -12,11 +16,16 @@ This is my personal vim configurations, including a vimrc file, a dictionary, co
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
-## Install
-For Mac or Linux users: 
-```
-$ cp -R .vim .git _vimrc ~
-```
+> The plugins in this repository are downloaded from [vim.org](http://www.vim.org/scripts/index.php) since they are not updated frequently there and are free of the of ```.git/``` files. To get up-to-date versions of the plugins, please download them directly from github. Links given above. 
 
-For Windows users, copy all files in vimconf to your home directory, and rename folder "**.vim**" to "**vimfiles**". 
-Your home directory is under "Users" directory in C: drive, "C:\\Users\your_user_name\".
+## Fun Things to Try Out
+* in insert mode, ```<C-X><C-K>``` for dictionary completion
+* in normal mode, ```<C-L>``` for spelling correction in text/markdown editing
+* in normal mode, ```:Cdfiledir``` to change working directory to enclosing directory of current file
+* in normal mode, ```<Space>``` for toggle folding in code editing
+* in normal mode, ```\n``` to change color scheme
+* in normal mode gVim, ```\j``` to show more lines in the buffer. 
+
+## Install
+* For Mac or Linux users, run ```install.sh```
+* For Windows users, run ```install.bat```
