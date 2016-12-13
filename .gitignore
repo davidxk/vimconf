@@ -1,20 +1,15 @@
-.*
-Applications
-Desktop
-Documents
-Downloads
-Library
-Movies
-Music
-Pictures
-Public
-VirtualBox VMs
-bin
-cloud
-known_hosts
-new
-tags
-vimconf
-Dropbox
-KextsBackupAfterPatch
-KextsBackupBeforePatch
+# Ignore everything
+*
+
+# Except
+!.gitignore
+!README.md
+!_vimrc
+!install.sh
+!.vim
+!.vim/*
+
+# But still ignore these 
+.*.swp
+*.swp
+*.DS_Store
