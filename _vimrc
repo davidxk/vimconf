@@ -16,6 +16,7 @@ set backspace=indent,eol,start
 set cinoptions=g0				"C indent option: indented 'case' 
 
 set clipboard+=unnamed
+let $VIMFILES = $HOME.'/.vim'
 set dictionary+=$VIMFILES/bundle/dict/words
 
 set display+=lastline
@@ -110,8 +111,8 @@ if has("syntax")
 endif
 
 "GUI Settings"
-let $VIMFILES = $HOME.'/.vim'
 if(has("win32")||has("win64"))
+	set runtimepath+=~/.vim
 	set guifont=Courier_New:h18
 elseif(has("gui_gtk2"))
 	set guifont=Courier\ 18
