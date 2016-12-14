@@ -182,6 +182,14 @@ if version >= 7.4
 		"Change directory to current file's enclosing directory
 		command -nargs=0 Cdfiledir cd %:p:h
 
+		"Usage: :Chmod700
+		"Change file mode to 700 so as to make shell script executable
+		command -nargs=0 Chmod700 !chmod 700 %
+
+		"Usage: :Rerunvimrc
+		"Rerun ~/vimrc
+		command -nargs=0 Rerunvimrc so ~/_vimrc
+
 	endif
 
 
