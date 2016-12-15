@@ -20,6 +20,7 @@ let $VIMFILES = $HOME.'/.vim'
 set dictionary+=$VIMFILES/bundle/dict/words
 
 set display+=lastline
+set tags=./tags;
 
 set linebreak
 set incsearch
@@ -189,6 +190,10 @@ if version >= 7.4
 		"Usage: :Rerunvimrc
 		"Rerun ~/vimrc
 		command -nargs=0 Rerunvimrc so ~/_vimrc
+
+		"Usage: :Ctags
+		"Run ctags recursively in current directory
+		command -nargs=0 Ctags !ctags -R
 
 	endif
 
