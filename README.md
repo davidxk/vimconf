@@ -10,7 +10,7 @@ The following customized features are defined in \_vimrc.
 * Handy customized vim commands
 * Code folding support for 10+ languages
 
-### List of Included Plugins
+### Included Plugins
 All of the plugins included here rank top 40 in downloads. These plugins make your coding experience more seamless and comfortable. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
@@ -23,9 +23,9 @@ All of the plugins included here rank top 40 in downloads. These plugins make yo
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
-### Key map
+### Key Mapping
 
-Language | Key map | Supported By | Description
+Language | Key mapping | Supported By | Description
 |--------|-------|-------|-------|
 C/C++ | \<leader\>**pl**, \<leader\>**pg** | vimrc | Insert "#include" line like c.vim
 C/C++ | \<leader\>**\+un** | vimrc | Insert "using namespace" line like c.vim
