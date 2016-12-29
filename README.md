@@ -1,11 +1,18 @@
 # vimconf
-This is my personal vim configurations, including a vimrc file, a dictionary, some color schemes and plugins managed with pathogen. It has been maintained for three years, since I started using Vim in my undergrad.
+Vimconf is a ready-to-use Vim configuration set that supports both \*nix and Windows systems. It includes a vimrc file, a dictionary, a colorscheme pack and a collection of plugins(managed with pathogen). 
 
-There's a lot of handy personalized configurations in vimrc and it supports folding and syntax highlight for a bunch of languages that I've been working with. I have been using it mainly for my Mac but I try to get it working compatibly with Windows and other Linux systems, as well.
+## Features
+The following customized features are defined in \_vimrc. 
 
-Hope fellow vim-lovers could find something useful here! 
+* Brackets auto-pairing
+* Dictionary completion
+* Spelling correction key map
+* Handy customized vim commands
+* Code folding support for 10+ languages
 
-## Plugins
+### List of Included Plugins
+All of the plugins included here rank top 40 in downloads. These plugins make your coding experience more seamless and comfortable. 
+
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [emmet-vim](https://github.com/mattn/emmet-vim)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
@@ -16,16 +23,47 @@ Hope fellow vim-lovers could find something useful here!
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
-> The plugins in this repository are downloaded from [vim.org](http://www.vim.org/scripts/index.php) since they are not updated frequently there and are free of the of ```.git/``` files. To get up-to-date versions of the plugins, please download them directly from github. Links given above. 
+### Key map
 
-## Fun Things to Try Out
-* in insert mode, ```<C-X><C-K>``` for dictionary completion
-* in normal mode, ```<C-L>``` for spelling correction in text/markdown editing
-* in normal mode, ```:Cdfiledir``` to change working directory to enclosing directory of current file
-* in normal mode, ```<Space>``` for toggle folding in code editing
-* in normal mode, ```\n``` to change color scheme
-* in normal mode gVim, ```\j``` to show more lines in the buffer. 
+Language | Key map | Supported By | Description
+|--------|-------|-------|-------|
+C/C++ | \<leader\>**pl**, \<leader\>**pg** | vimrc | Insert "#include" line like c.vim
+C/C++ | \<leader\>**\+un** | vimrc | Insert "using namespace" line like c.vim
+C/C++ | **:A** | A.vim | Toggle between header file and c/cxx file
+C/C++ | \<leader\>**tl** | taglist | Display tags in the file
+C/C++ | \<leader\>**;** | vimrc | Add semicolon at end of line
+Perl | \<leader\>**{** | vimrc | Add bracket at end of line with line break and pairing
+Python | \<leader\>**:** | vimrc | Add colon at end of line
+HTML/XML | tag\<C-Y\>**,** | emmet | Make html tag pairs
+HTML/XML | **ys**aw\<tag\> | surround | Add tag around word under cursor
+markdown | **ys**aw**B** | surround | Add bold to the word under cursor
+markdown | \<C-L\> | vimrc | Correct the spelling of the first misspelled word left of the cursor
+SQL | \<leader\>**,** | vimrc | Add comma to end of line
+\-  | \<space\> | vimrc | Toggle code fold
+\-  | \<leader\>**c**\<space\> | nerdcommenter | Toggles the comment state of the selected line(s)
+\-  | \<leader\>**tr** | NERDTree | Toggle file explorer panel
 
-## Install
+### Customized Commands
+Command | Description
+|-------|-----------|
+**:Pickonly** regex | Delete all lines except lines with patter 'regex'
+**:Cdfiledir** | Change directory to current file's enclosing directory
+**:Chmod700** | Change file mode to 700 so as to make shell script executable
+**:Rerunvimrc** | Rerun ~/\_vimrc
+**:Ctags** | Run ctags recursively in current directory
+
+## Installation
+Download the repository and run installation script. 
+
 * For Mac or Linux users, run ```install.sh```
 * For Windows users, run ```install.bat```
+
+## Try things out ... 
+Here is a hint of some of the handy features that you simply cannot miss. 
+
+* In insert mode, ```<C-X><C-K>``` for dictionary completion
+* In normal mode, ```<C-L>``` for spelling correction in text/markdown editing
+* In normal mode, ```:Cdfiledir``` to change working directory to enclosing directory of current file
+* In normal mode, ```<Space>``` for toggle folding in code editing
+* In normal mode, ```\n``` to change color scheme
+* In normal mode gVim, ```\j``` to show more lines in the buffer. 
