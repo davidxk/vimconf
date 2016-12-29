@@ -40,12 +40,12 @@ if has("autocmd")
 	autocmd FileType c,cpp,lex,java,javascript inoremap { {<Enter>}<Esc>O
 
 	"C/C++ exclusive
-	autocmd FileType c,cpp,lex,yacc inoremap \pg #include<space><><Esc>i
-	autocmd FileType c,cpp,lex,yacc inoremap \pl #include<space>""<Esc>i
-	autocmd FileType c,cpp,lex,yacc inoremap \+un using<space>namespace<space>
-	autocmd FileType c,cpp,lex,yacc nnoremap \pg I#include<space><><Esc>i
-	autocmd FileType c,cpp,lex,yacc nnoremap \pl I#include<space>""<Esc>i
-	autocmd FileType c,cpp,lex,yacc nnoremap \+un Iusing<space>namespace<space>
+	autocmd FileType c,cpp,lex,yacc inoremap <leader>pg #include<space><><Esc>i
+	autocmd FileType c,cpp,lex,yacc inoremap <leader>pl #include<space>""<Esc>i
+	autocmd FileType c,cpp,lex,yacc inoremap <leader>+un using<space>namespace<space>
+	autocmd FileType c,cpp,lex,yacc nnoremap <leader>pg I#include<space><><Esc>i
+	autocmd FileType c,cpp,lex,yacc nnoremap <leader>pl I#include<space>""<Esc>i
+	autocmd FileType c,cpp,lex,yacc nnoremap <leader>+un Iusing<space>namespace<space>
 
 	"lex"
 	autocmd FileType lex set cindent
@@ -54,7 +54,7 @@ if has("autocmd")
 
 	"Script languages
 	autocmd FileType perl inoremap { {}<ESC>i
-	autocmd FileType perl inoremap \{ <Esc>A{<Enter>}<Esc>O
+	autocmd FileType perl inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
 	autocmd FileType python set foldmethod=indent
 
 	"Markup languages
@@ -63,8 +63,8 @@ if has("autocmd")
 
 	"Markdown language
 	autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-	autocmd FileType markdown inoremap \> <Esc>A<br>
-	autocmd FileType markdown nnoremap \> A<br><Esc>
+	autocmd FileType markdown inoremap <leader>> <Esc>A<br>
+	autocmd FileType markdown nnoremap <leader>> A<br><Esc>
 	autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
 	autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
@@ -75,15 +75,15 @@ if has("autocmd")
 	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
 		"Local marked2 shortcut
-		autocmd FileType markdown nnoremap \mk :!open -a marked\ 2 %<CR><CR>
+		autocmd FileType markdown nnoremap <leader>mk :!open -a marked\ 2 %<CR><CR>
 	endif
 
 	"Arduino
 	autocmd FileType arduino inoremap { {<Enter>}<Esc>O
 
 	"SQL
-	autocmd FileType sql nnoremap \, A,<Esc>
-	autocmd FileType sql inoremap \, <Esc>A,
+	autocmd FileType sql nnoremap <leader>, A,<Esc>
+	autocmd FileType sql inoremap <leader>, <Esc>A,
 	let g:ftplugin_sql_omni_key = '<C-?>'
 
 	if has("syntax")
@@ -129,31 +129,34 @@ iabbrev inlcude include
 "nnoremap for tabs
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
-nnoremap \tn :tabe .<CR>
+nnoremap <leader>tn :tabe .<CR>
 nnoremap <C-N> :tabnew<CR>
 "nnoremap toggle folding
 nnoremap <Space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 "nnoremap on <leader>
-nnoremap \tr :NERDTreeToggle<CR>
-nnoremap \tl :Tlist<CR>
-nnoremap \l :se<Space>columns=120<CR>
-nnoremap \h :se<Space>columns=80<CR>
-nnoremap \j :se<Space>lines=30<CR>
-nnoremap \k :se<Space>lines=24<CR>
-nnoremap \; A;<Esc>
-nnoremap \: A:<Esc>
+nnoremap <leader>tr :NERDTreeToggle<CR>
+nnoremap <leader>tl :TlistToggle<CR>
+nnoremap <leader>l :se<Space>columns=120<CR>
+nnoremap <leader>h :se<Space>columns=80<CR>
+nnoremap <leader>j :se<Space>lines=30<CR>
+nnoremap <leader>k :se<Space>lines=24<CR>
+nnoremap <leader>; A;<Esc>
+nnoremap <leader>: A:<Esc>
 "inoremap
 inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
-inoremap \o <Esc>o
-inoremap \; <Esc>A;
-inoremap \: <Esc>A:
-inoremap \j <Down>
-inoremap \l <Right>
+inoremap <leader>o <Esc>o
+inoremap <leader>; <Esc>A;
+inoremap <leader>: <Esc>A:
+inoremap <leader>j <Down>
+inoremap <leader>l <Right>
 "Pairing
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap " ""<Esc>i
+"Command
+cnoremap Tabe tabe
+cnoremap Tabf tabe %:p:h/
 
 
 
@@ -188,12 +191,15 @@ if version >= 7.4
 		command -nargs=0 Chmod700 !chmod 700 %
 
 		"Usage: :Rerunvimrc
-		"Rerun ~/vimrc
+		"Rerun ~/_vimrc
 		command -nargs=0 Rerunvimrc so ~/_vimrc
 
 		"Usage: :Ctags
 		"Run ctags recursively in current directory
 		command -nargs=0 Ctags !ctags -R
+		
+		"Typo saver
+		command -nargs=0 W w
 
 	endif
 
