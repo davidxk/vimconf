@@ -1,1 +1,1 @@
-cp -R .vim .git _vimrc .gitignore ~
+cp -R .vim _vimrc ~

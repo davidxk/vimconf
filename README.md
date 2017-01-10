@@ -11,7 +11,7 @@ The following customized features are defined in \_vimrc.
 * Code folding support for 10+ languages
 
 ### Included Plugins
-All of the plugins included here rank top 40 in downloads. These plugins make your coding experience more seamless and comfortable. 
+All of the plugins included here rank top 40 in downloads on [vim.org](vim.org). These plugins make your coding experience more seamless and comfortable. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [emmet-vim](https://github.com/mattn/emmet-vim)
@@ -23,7 +23,7 @@ All of the plugins included here rank top 40 in downloads. These plugins make yo
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
-### Key Mapping
+### Key Mappings
 
 Language | Key mapping | Supported By | Description
 |--------|-------|-------|-------|
@@ -55,7 +55,7 @@ Command | Description
 ## Installation
 Download the repository and run installation script. 
 
-* For Mac or Linux users, run ```install.sh```
+* For Mac or Linux users, run ```cd vimconf; chmod 700 install.sh; ./install.sh```
 * For Windows users, run ```install.bat```
 
 ## Try things out ... 
@@ -65,5 +65,5 @@ Here is a hint of some of the handy features that you simply cannot miss.
 * In normal mode, ```<C-L>``` for spelling correction in text/markdown editing
 * In normal mode, ```:Cdfiledir``` to change working directory to enclosing directory of current file
 * In normal mode, ```<Space>``` for toggle folding in code editing
-* In normal mode, ```\n``` to change color scheme
-* In normal mode gVim, ```\j``` to show more lines in the buffer. 
+* In normal mode, ```<leader>n``` to change color scheme
+* In normal mode gVim, ```<leader>j``` to show more lines in the buffer. 
