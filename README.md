@@ -53,9 +53,20 @@ Command | Description
 **:Ctags** | Run ctags recursively in current directory
 
 ## Installation
-Download the repository and run installation script. 
+First download the repository.
 
-* For Mac or Linux users, run ```cd vimconf; chmod 700 install.sh; ./install.sh```
+```bash
+git clone git@github.com:davidxk/vimconf.git
+```
+
+Next run installation script. 
+
+* For Mac or Linux users, run
+```
+pushd vimconf; chmod 700 install.sh; ./install.sh; popd
+```
+
+
 * For Windows users, run ```install.bat```
 
 ## Try things out ... 

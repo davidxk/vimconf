@@ -15,7 +15,9 @@ set fileencodings=utf-8,ucs-bom,cp936
 set backspace=indent,eol,start
 set cinoptions=g0				"C indent option: indented 'case' 
 
-set clipboard+=unnamed
+if $TMUX == ''
+	set clipboard+=unnamed
+endif
 let $VIMFILES = $HOME.'/.vim'
 set dictionary+=$VIMFILES/bundle/dict/words
 
