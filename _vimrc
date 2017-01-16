@@ -178,6 +178,7 @@ if version >= 7.4
 		return a:char
 	endfunction
 
+	"Customized commands
 	if !exists(':Pickonly') && !exists(':Cdfiledir')
 		
 		"Usage: :Pickonly regex
@@ -198,7 +199,7 @@ if version >= 7.4
 
 		"Usage: :Ctags
 		"Run ctags recursively in current directory
-		command -nargs=0 Ctags !ctags -R
+		command -nargs=0 Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
 		
 		"Typo saver
 		command -nargs=0 W w
@@ -214,6 +215,12 @@ if version >= 7.4
 	":Helptags			//update help file of plugins
 	let g:pathogen_disabled = []
 	runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+	"Syntastic"
+	let g:syntastic_c_gcc_quiet_messages = { "regex": 'file not found' }
+
+	"neocomplcache"
+	let g:neocomplcache_enable_at_startup = 1
 
 	"OmniCppComplete"
 	set completeopt=menu

@@ -11,15 +11,17 @@ The following customized features are defined in \_vimrc.
 * Code folding support for 10+ languages
 
 ### Included Plugins
-All of the plugins included here rank top 40 in downloads on [vim.org](vim.org). These plugins make your coding experience more seamless and comfortable. 
+Most of the plugins included here rank top 40 in downloads on [vim.org](vim.org). These plugins make your coding experience more seamless and comfortable. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [emmet-vim](https://github.com/mattn/emmet-vim)
+* [neocomplcache](https://github.com/Shougo/neocomplcache.vim)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [omnicppcomplete](https://github.com/vim-scripts/OmniCppComplete)
 * [scrollcolors](https://github.com/vim-scripts/ScrollColors)
 * [surround](http://github.com/tpope/vim-surround)
+* [syntastic](https://github.com/vim-syntastic/syntastic)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
