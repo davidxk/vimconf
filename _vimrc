@@ -14,6 +14,7 @@ set fileencodings=utf-8,ucs-bom,cp936
 
 set backspace=indent,eol,start
 set cinoptions=g0				"C indent option: indented 'case' 
+set path+=**
 
 if $TMUX == ''
 	set clipboard+=unnamed
@@ -158,7 +159,7 @@ inoremap [ []<Esc>i
 inoremap " ""<Esc>i
 "Command
 cnoremap Tabe tabe
-cnoremap Tabf tabe %:p:h/
+"cnoremap Tabf tabe %:p:h/
 
 
 
