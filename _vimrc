@@ -73,7 +73,7 @@ if has("autocmd")
 	autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
 	autocmd FileType markdown let b:surround_66 = "**\r**"
-	autocmd FileType markdown,text set spell
+	autocmd FileType markdown set spell
 	autocmd FileType markdown,text set spelllang=en
 	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
