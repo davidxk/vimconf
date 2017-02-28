@@ -78,7 +78,7 @@ if has("autocmd")
 	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
 		"Local marked2 shortcut
-		autocmd FileType markdown nnoremap <leader>mk :!open -a marked\ 2 %<CR><CR>
+		autocmd FileType markdown nnoremap <leader>mk :silent !open -a marked\ 2 %<CR><CR>
 	endif
 
 	"Arduino
@@ -228,6 +228,7 @@ if version >= 7.4
 	let OmniCpp_MayCompleteScope = 1
 
 	"Taglist"
+	let Tlist_Show_One_File = 1
 	"If exuberant ctags not installed, disable Taglist
 	if !exists('Tlist_Ctags_Cmd')
 		if executable('exuberant-ctags')
