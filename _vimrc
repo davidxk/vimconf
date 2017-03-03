@@ -200,7 +200,7 @@ if version >= 7.4
 
 		"Usage: :Ctags
 		"Run ctags recursively in current directory
-		command -nargs=0 Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
+		command -nargs=0 Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+qf
 		
 		"Typo saver
 		command -nargs=0 W w
