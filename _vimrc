@@ -192,7 +192,7 @@ if version >= 7.4
 
 		"Usage: :Chmod700
 		"Change file mode to 700 so as to make shell script executable
-		command -nargs=0 Chmod700 !chmod 700 %
+		command -nargs=0 Chmod700 silent !chmod 700 %
 
 		"Usage: :Rerunvimrc
 		"Rerun ~/_vimrc
