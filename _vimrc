@@ -22,6 +22,7 @@ endif
 let $VIMFILES = $HOME.'/.vim'
 set dictionary+=$VIMFILES/bundle/dict/words
 
+set shortmess+=c
 set display+=lastline
 set tags=./tags;
 
@@ -69,10 +70,11 @@ if has("autocmd")
 	autocmd FileType markdown inoremap <leader>> <Esc>A<br>
 	autocmd FileType markdown nnoremap <leader>> A<br><Esc>
 	autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
-	autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
-	autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
+	autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_66 = "**\r**"
+	autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
+	autocmd FileType markdown let b:surround_99 = "```\r```"
 	autocmd FileType markdown set spell
 	autocmd FileType markdown,text set spelllang=en
 	autocmd FileType markdown,text set foldmethod=marker
@@ -153,13 +155,13 @@ inoremap <leader>; <Esc>A;
 inoremap <leader>: <Esc>A:
 inoremap <leader>j <Down>
 inoremap <leader>l <Right>
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 "Pairing
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap " ""<Esc>i
 "Command
 cnoremap Tabe tabe
-"cnoremap Tabf tabe %:p:h/
 
 
 
@@ -177,6 +179,10 @@ if version >= 7.4
 			return "\<Right>"
 		endif
 		return a:char
+	endfunction
+
+	function! s:my_cr_function()
+		return neocomplcache#smart_close_popup() . "\<CR>"
 	endfunction
 
 	"Customized commands
@@ -230,6 +236,8 @@ if version >= 7.4
 
 	"Syntastic"
 	let g:syntastic_c_gcc_quiet_messages = { "regex": 'file not found' }
+	let g:syntastic_cpp_gcc_quiet_messages = {
+				\ "regex": ['C++11', 'file not found'] }
 
 	"neocomplcache"
 	let g:neocomplcache_enable_at_startup = 1
