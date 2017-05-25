@@ -156,6 +156,7 @@ inoremap <leader>: <Esc>A:
 inoremap <leader>j <Down>
 inoremap <leader>l <Right>
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <silent> <C-J> <C-r>=<SID>my_cr_function()<CR>
 "Pairing
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
@@ -182,7 +183,7 @@ if version >= 7.4
 	endfunction
 
 	function! s:my_cr_function()
-		return neocomplcache#smart_close_popup() . "\<CR>"
+		return neocomplcache#close_popup() . "\<CR>"
 	endfunction
 
 	"Customized commands
