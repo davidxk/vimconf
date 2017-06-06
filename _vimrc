@@ -58,8 +58,12 @@ if has("autocmd")
 
 	"Script languages
 	autocmd FileType perl inoremap { {}<ESC>i
-	autocmd FileType perl inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
 	autocmd FileType python set foldmethod=indent
+
+	"K&R braces placement
+	autocmd FileType go,perl inoremap {<CR> {<CR>}<Esc>O
+	autocmd FileType go,perl inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
+	autocmd FileType go,perl nnoremap <leader>{ A<space>{<Enter>}<Esc>O
 
 	"Markup languages
 	autocmd FileType html,jsp,xml set tabstop=2
