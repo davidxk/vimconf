@@ -220,6 +220,9 @@ if version >= 7.4
 		"Typo saver
 		command -nargs=0 W w
 
+		"Close tabs to the right
+		command -nargs=0 Tabr :.+1,$tabdo :q
+
 	endif
 
 	function! ToggleCAndHFile()
