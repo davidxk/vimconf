@@ -73,7 +73,8 @@ if has("autocmd")
 	autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 	autocmd FileType markdown inoremap <leader>> <Esc>A<br>
 	autocmd FileType markdown nnoremap <leader>> A<br><Esc>
-	autocmd FileType markdown nnoremap <C-L> [s1z=<c-o>
+	autocmd FileType markdown nnoremap <C-L> [s1z=<C-O>
+	autocmd FileType markdown nnoremap <C-K> u<C-O>[s2z=<C-O>
 	autocmd FileType markdown let b:surround_80 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_112 = "\\\\(\r\\\\)"
 	autocmd FileType markdown let b:surround_66 = "**\r**"
