@@ -1,17 +1,27 @@
 # vimconf
-Vimconf is a ready-to-use Vim configuration set that supports both \*nix and Windows systems. It includes a vimrc file, a dictionary, a colorscheme pack and a collection of plugins(managed with pathogen). 
+* Super easy, one-click installation
+* Extensive supports for multiple programming languages
+* Compatibility across platforms and over different versions of Vim
+
+## Installation
+### Windows
+Click [here](https://github.com/davidxk/vimconf/archive/master.zip) to download the repository and double click ```install.bat```. 
+
+### macOS and Linux
+```bash
+git clone git@github.com:davidxk/vimconf.git
+pushd vimconf; chmod 700 install.sh; ./install.sh; popd
+```
 
 ## Features
-The following customized features are defined in \_vimrc. 
-
 * Brackets auto-pairing
-* Dictionary completion
-* Spelling correction key map
+* Space key folding toggle
+* Auto spell correction
 * Handy customized vim commands
-* Code folding support for 10+ languages
+* Supports C/C++, Python, HTML/XML, SQL, Markdown, Perl, etc. 
 
 ### Included Plugins
-Most of the plugins included here rank top 40 in downloads on [vim.org](vim.org). These plugins make your coding experience more seamless and comfortable. 
+Selected from top 40 plugins in [vim.org](vim.org) that makes your coding experience seamless and comfortable. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [emmet-vim](https://github.com/mattn/emmet-vim)
@@ -25,57 +35,23 @@ Most of the plugins included here rank top 40 in downloads on [vim.org](vim.org)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [vim-pathogen](http://github.com/tpope/vim-pathogen)
 
-### Key Mappings
-
-Language | Key mapping | Supported By | Description
-|--------|-------|-------|-------|
-C/C++ | \<leader\>**pl**, \<leader\>**pg** | vimrc | Insert "#include" line like c.vim
-C/C++ | \<leader\>**\+un** | vimrc | Insert "using namespace" line like c.vim
-C/C++ | **:A** | A.vim | Toggle between header file and c/cxx file
-C/C++ | \<leader\>**tl** | taglist | Display tags in the file
-C/C++ | \<leader\>**;** | vimrc | Add semicolon at end of line
-Perl | \<leader\>**{** | vimrc | Add bracket at end of line with line break and pairing
-Python | \<leader\>**:** | vimrc | Add colon at end of line
-HTML/XML | tag\<C-Y\>**,** | emmet | Make html tag pairs
-HTML/XML | **ys**aw\<tag\> | surround | Add tag around word under cursor
-markdown | **ys**aw**B** | surround | Add bold to the word under cursor
-markdown | \<C-L\> | vimrc | Correct the spelling of the first misspelled word left of the cursor
-SQL | \<leader\>**,** | vimrc | Add comma to end of line
-\-  | \<space\> | vimrc | Toggle code fold
-\-  | \<leader\>**c**\<space\> | nerdcommenter | Toggles the comment state of the selected line(s)
-\-  | \<leader\>**tr** | NERDTree | Toggle file explorer panel
-
 ### Customized Commands
 Command | Description
 |-------|-----------|
-**:Pickonly** regex | Delete all lines except lines with patter 'regex'
-**:Cdfiledir** | Change directory to current file's enclosing directory
-**:Chmod700** | Change file mode to 700 so as to make shell script executable
+**:Tabr** | Close tabs to the right
+**:Cdfiledir** | Change working directory to location of the file
+**:Pickonly** regex | Delete all lines not matching pattern 'regex'
+**:Chmod700** | Make current file executable
+**:C** | Switch between .c file and .h file
 **:Rerunvimrc** | Rerun ~/\_vimrc
 **:Ctags** | Run ctags recursively in current directory
 
-## Installation
-First download the repository.
 
-```bash
-git clone git@github.com:davidxk/vimconf.git
-```
-
-Next run installation script. 
-
-* For Mac or Linux users, run
-```
-pushd vimconf; chmod 700 install.sh; ./install.sh; popd
-```
-
-
-* For Windows users, run ```install.bat```
-
-## Try things out ... 
-Here is a hint of some of the handy features that you simply cannot miss. 
+## Try these out ... 
+Here is a hint of some of the handy features that you don't want to miss. 
 
 * In insert mode, ```<C-X><C-K>``` for dictionary completion
-* In normal mode, ```<C-L>``` for spelling correction in text/markdown editing
+* In normal mode, ```<C-L>``` for spell correction in text/markdown editing
 * In normal mode, ```:Cdfiledir``` to change working directory to enclosing directory of current file
 * In normal mode, ```<Space>``` for toggle folding in code editing
 * In normal mode, ```<leader>n``` to change color scheme
