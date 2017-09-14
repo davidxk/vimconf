@@ -9,6 +9,7 @@
 !install.bat
 !.vim
 !.vim/*
+!demo.gif
 
 # But still ignore these 
 .*.swp

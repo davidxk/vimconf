@@ -5,7 +5,7 @@
 
 ## Installation
 ### Windows
-Click [here](https://github.com/davidxk/vimconf/archive/master.zip) to download the repository and double click ```install.bat```. 
+Download the repository [here](https://github.com/davidxk/vimconf/archive/master.zip) and click ```install.bat```. 
 
 ### macOS and Linux
 ```bash
@@ -20,8 +20,10 @@ pushd vimconf; chmod 700 install.sh; ./install.sh; popd
 * Handy customized vim commands
 * Supports C/C++, Python, HTML/XML, SQL, Markdown, Perl, etc. 
 
+![](demo.gif)
+
 ### Included Plugins
-Selected from top 40 plugins in [vim.org](vim.org) that makes your coding experience seamless and comfortable. 
+Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/script_search_results.php?keywords=&script_type=&order_by=downloads&direction=descending&search=search), managed with pathogen. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [emmet-vim](https://github.com/mattn/emmet-vim)

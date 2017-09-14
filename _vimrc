@@ -159,7 +159,6 @@ inoremap <leader>o <Esc>o
 inoremap <leader>; <Esc>A;
 inoremap <leader>: <Esc>A:
 inoremap <leader>j <Down>
-inoremap <leader>l <Right>
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <silent> <C-J> <C-r>=<SID>my_cr_function()<CR>
 "Pairing
@@ -191,6 +190,14 @@ if version >= 7.4
 		return neocomplcache#close_popup() . "\<CR>"
 	endfunction
 
+	function! ToggleCAndHFile()
+		if match(@%, "\.c$") != -1
+			find %:t:r.h
+		else
+			find %:t:r.c
+		endif
+	endfunction
+
 	"Customized commands
 	if !exists(':Pickonly') && !exists(':Cdfiledir')
 		
@@ -210,9 +217,17 @@ if version >= 7.4
 		"Rerun ~/_vimrc
 		command -nargs=0 Rerunvimrc so ~/_vimrc
 
+		"Usage: :Refresh
+		"Refresh buffer
+		command -nargs=0 Refresh e %
+
 		"Usage: :Ctags
 		"Run ctags recursively in current directory
 		command -nargs=0 Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+qf
+		"Usage: :Tabr
+		"Close tabs to the right
+		command -nargs=0 Tabr :.+1,$tabdo :q
+
 
 		"Usage: :C   (called inside project root directory)
 		"Switch between C file and Header file
@@ -221,18 +236,7 @@ if version >= 7.4
 		"Typo saver
 		command -nargs=0 W w
 
-		"Close tabs to the right
-		command -nargs=0 Tabr :.+1,$tabdo :q
-
 	endif
-
-	function! ToggleCAndHFile()
-		if match(@%, "\.c$") != -1
-			find %:t:r.h
-		else
-			find %:t:r.c
-		endif
-	endfunction
 
 
 
