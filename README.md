@@ -26,16 +26,17 @@ pushd vimconf; chmod 700 install.sh; ./install.sh; popd
 Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/script_search_results.php?keywords=&script_type=&order_by=downloads&direction=descending&search=search), managed with pathogen. 
 
 * [a.vim](https://github.com/vim-scripts/a.vim)
-* [emmet-vim](https://github.com/mattn/emmet-vim)
+* [Emmet-vim](https://github.com/mattn/emmet-vim)
 * [neocomplcache](https://github.com/Shougo/neocomplcache.vim)
-* [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-* [nerdtree](https://github.com/scrooloose/nerdtree)
-* [omnicppcomplete](https://github.com/vim-scripts/OmniCppComplete)
-* [scrollcolors](https://github.com/vim-scripts/ScrollColors)
-* [surround](http://github.com/tpope/vim-surround)
-* [syntastic](https://github.com/vim-syntastic/syntastic)
+* [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
+* [NERDTree](https://github.com/scrooloose/nerdtree)
+* [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
+* [ScrollColors](https://github.com/vim-scripts/ScrollColors)
+* [Surround.vim](http://github.com/tpope/vim-surround)
+* [Syntastic](https://github.com/vim-syntastic/syntastic)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
-* [vim-pathogen](http://github.com/tpope/vim-pathogen)
+* [pathogen.vim](http://github.com/tpope/vim-pathogen)
+* [vim-scala](https://github.com/derekwyatt/vim-scala)
 
 ### Customized Commands
 Command | Description
