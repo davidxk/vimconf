@@ -22,7 +22,6 @@ endif
 let $VIMFILES = $HOME.'/.vim'
 set dictionary+=$VIMFILES/bundle/dict/words
 
-set shortmess+=c
 set display+=lastline
 set tags=./tags;
 
@@ -86,6 +85,8 @@ if has("autocmd")
 	if(has("mac"))
 		"Local marked2 shortcut
 		autocmd FileType markdown nnoremap <leader>mk :silent !open -a marked\ 2 %<CR><CR>
+		"Not supported on other systems
+		set shortmess+=c
 	endif
 
 	"Arduino

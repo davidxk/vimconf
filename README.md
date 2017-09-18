@@ -18,7 +18,7 @@ pushd vimconf; chmod 700 install.sh; ./install.sh; popd
 * Space key folding toggle
 * Auto spell correction
 * Handy customized vim commands
-* Supports C/C++, Python, HTML/XML, SQL, Markdown, Perl, etc. 
+* Supports C/C++, Python, Scala, Markdown, Perl, HTML/XML, etc. 
 
 ![](demo.gif)
 
