@@ -33,7 +33,7 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 * [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
 * [ScrollColors](https://github.com/vim-scripts/ScrollColors)
 * [Surround.vim](http://github.com/tpope/vim-surround)
-* [Syntastic](https://github.com/vim-syntastic/syntastic)
+* [ALE](https://github.com/w0rp/ale)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [pathogen.vim](http://github.com/tpope/vim-pathogen)
 * [vim-scala](https://github.com/derekwyatt/vim-scala)

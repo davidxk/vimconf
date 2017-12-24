@@ -60,9 +60,9 @@ if has("autocmd")
 	autocmd FileType python set foldmethod=indent
 
 	"K&R braces placement
-	autocmd FileType go,perl inoremap {<CR> {<CR>}<Esc>O
-	autocmd FileType go,perl inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
-	autocmd FileType go,perl nnoremap <leader>{ A<space>{<Enter>}<Esc>O
+	autocmd FileType go,perl,scala inoremap {<CR> {<CR>}<Esc>O
+	autocmd FileType go,perl,scala inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
+	autocmd FileType go,perl,scala nnoremap <leader>{ A<space>{<Enter>}<Esc>O
 
 	"Markup languages
 	autocmd FileType html,jsp,xml set tabstop=2
@@ -104,7 +104,7 @@ if has("autocmd")
 		let perl_fold = 1
 		let vimsyn_folding = 'af'
 		autocmd FileType c,cpp,h,lex set foldmethod=syntax
-		autocmd FileType java set foldmethod=syntax
+		autocmd FileType java,scala  set foldmethod=syntax
 		autocmd FileType arduino set foldmethod=syntax
 	endif
 endif
@@ -247,11 +247,6 @@ if version >= 7.4
 	":Helptags			//update help file of plugins
 	let g:pathogen_disabled = []
 	runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-	"Syntastic"
-	let g:syntastic_c_gcc_quiet_messages = { "regex": 'file not found' }
-	let g:syntastic_cpp_gcc_quiet_messages = {
-				\ "regex": ['C++11', 'file not found'] }
 
 	"neocomplcache"
 	let g:neocomplcache_enable_at_startup = 1
