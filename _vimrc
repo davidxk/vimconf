@@ -49,6 +49,7 @@ if has("autocmd")
 	autocmd FileType c,cpp,lex,yacc nnoremap <leader>pg I#include<space><><Esc>i
 	autocmd FileType c,cpp,lex,yacc nnoremap <leader>pl I#include<space>""<Esc>i
 	autocmd FileType c,cpp,lex,yacc nnoremap <leader>+un Iusing<space>namespace<space>
+	autocmd FileType c,cpp,lex,yacc inoremap @test <Esc>A // testing
 
 	"lex"
 	autocmd FileType lex set cindent
@@ -80,6 +81,7 @@ if has("autocmd")
 	autocmd FileType markdown let b:surround_98 = "\\\\[\r\\\\]"
 	autocmd FileType markdown let b:surround_99 = "```\r```"
 	autocmd FileType markdown set spell
+	autocmd FileType markdown nnoremap \expl i [= 
 	autocmd FileType markdown,text set spelllang=en
 	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
@@ -99,6 +101,7 @@ if has("autocmd")
 
 	if has("syntax")
 		let r_syntax_folding = 1
+		let javaScript_fold = 1
 		let sh_fold_enabled = 1
 		let xml_syntax_folding = 1
 		let perl_fold = 1
@@ -156,12 +159,10 @@ nnoremap <leader>: A:<Esc>
 "inoremap
 inoremap <C-S> <Esc>:w<CR>a
 inoremap <C-Z> <Esc>ua
-inoremap <leader>o <Esc>o
+"inoremap <leader>o <Esc>o
 inoremap <leader>; <Esc>A;
 inoremap <leader>: <Esc>A:
 inoremap <leader>j <Down>
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-inoremap <silent> <C-J> <C-r>=<SID>my_cr_function()<CR>
 "Pairing
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
@@ -185,10 +186,6 @@ if version >= 7.4
 			return "\<Right>"
 		endif
 		return a:char
-	endfunction
-
-	function! s:my_cr_function()
-		return neocomplcache#close_popup() . "\<CR>"
 	endfunction
 
 	function! ToggleCAndHFile()
@@ -229,6 +226,13 @@ if version >= 7.4
 		"Close tabs to the right
 		command -nargs=0 Tabr :.+1,$tabdo :q
 
+		"Usage: :diffvsp filename
+		"Open a new window vertically on the file
+		command -nargs=1 Diff :vert diffsplit <args>
+
+		"Usage: Synctex
+		"Compile the current tex and display line under cursor with Skim
+		command -nargs=0 Synctex silent w | silent make | redraw! | execute '!/Applications/Skim.app/Contents/SharedSupport/displayline -b '.line('.').' %:t:r.pdf'
 
 		"Usage: :C   (called inside project root directory)
 		"Switch between C file and Header file
