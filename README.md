@@ -25,6 +25,7 @@ pushd vimconf; chmod 700 install.sh; ./install.sh; popd
 ### Included Plugins
 Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/script_search_results.php?keywords=&script_type=&order_by=downloads&direction=descending&search=search), managed with pathogen. 
 
+* [ALE](https://github.com/w0rp/ale)
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [Emmet-vim](https://github.com/mattn/emmet-vim)
 * [neocomplcache](https://github.com/Shougo/neocomplcache.vim)
@@ -33,21 +34,23 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 * [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
 * [ScrollColors](https://github.com/vim-scripts/ScrollColors)
 * [Surround.vim](http://github.com/tpope/vim-surround)
-* [ALE](https://github.com/w0rp/ale)
+* [tabular](https://github.com/godlygeek/tabular)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [pathogen.vim](http://github.com/tpope/vim-pathogen)
 * [vim-scala](https://github.com/derekwyatt/vim-scala)
 
 ### Customized Commands
-Command | Description
-|-------|-----------|
-**:Tabr** | Close tabs to the right
-**:Cdfiledir** | Change working directory to location of the file
-**:Pickonly** regex | Delete all lines not matching pattern 'regex'
-**:Chmod700** | Make current file executable
-**:C** | Switch between .c file and .h file
-**:Rerunvimrc** | Rerun ~/\_vimrc
-**:Ctags** | Run ctags recursively in current directory
+| Command             | Description                                      |
+| -------             | -----------                                      |
+| **:C**              | Switch between .c file and .h file               |
+| **:Cdfiledir**      | Change working directory to location of the file |
+| **:Chmod700**       | Make current file executable                     |
+| **:Ctags**          | Run ctags recursively in current directory       |
+| **:Diff** filename  | Run diff mode on the current file and filename   |
+| **:Pickonly** regex | Delete all lines not matching pattern 'regex'    |
+| **:Refresh**        | Restart vim on this file                         |
+| **:Rerunvimrc**     | Rerun ~/\_vimrc                                  |
+| **:Tabr**           | Close tabs to the right                          |
 
 
 ## Try these out ... 

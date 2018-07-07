@@ -226,7 +226,7 @@ if version >= 7.4
 		"Close tabs to the right
 		command -nargs=0 Tabr :.+1,$tabdo :q
 
-		"Usage: :diffvsp filename
+		"Usage: :Diff filename
 		"Open a new window vertically on the file
 		command -nargs=1 Diff :vert diffsplit <args>
 
