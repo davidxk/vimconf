@@ -207,9 +207,9 @@ if version >= 7.4
 		"Change directory to current file's enclosing directory
 		command -nargs=0 Cdfiledir cd %:p:h
 
-		"Usage: :Chmod700
-		"Change file mode to 700 so as to make shell script executable
-		command -nargs=0 Chmod700 silent !chmod 700 %
+		"Usage: :Chmodx
+		"Change file mode +x in order to make shell script executable
+		command -nargs=0 Chmodx silent !chmod +x %
 
 		"Usage: :Rerunvimrc
 		"Rerun ~/_vimrc
@@ -222,6 +222,7 @@ if version >= 7.4
 		"Usage: :Ctags
 		"Run ctags recursively in current directory
 		command -nargs=0 Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+qf
+
 		"Usage: :Tabr
 		"Close tabs to the right
 		command -nargs=0 Tabr :.+1,$tabdo :q
