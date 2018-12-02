@@ -1,0 +1,1 @@
+localvimrc.vmb: call delete('/Users/apple/.vim/bundle/localvimrc//doc/localvimrc.txt')|call delete('/Users/apple/.vim/bundle/localvimrc//plugin/localvimrc.vim')

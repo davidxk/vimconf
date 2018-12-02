@@ -143,8 +143,6 @@ iabbrev inlcude include
 "nnoremap for tabs
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
-nnoremap <leader>tn :tabe .<CR>
-nnoremap <C-N> :tabnew<CR>
 "nnoremap toggle folding
 nnoremap <Space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 "nnoremap on <leader>
@@ -157,8 +155,6 @@ nnoremap <leader>k :se<Space>lines=24<CR>
 nnoremap <leader>; A;<Esc>
 nnoremap <leader>: A:<Esc>
 "inoremap
-inoremap <C-S> <Esc>:w<CR>a
-inoremap <C-Z> <Esc>ua
 "inoremap <leader>o <Esc>o
 inoremap <leader>; <Esc>A;
 inoremap <leader>: <Esc>A:
@@ -252,6 +248,13 @@ if version >= 7.4
 	":Helptags			//update help file of plugins
 	let g:pathogen_disabled = []
 	runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+	"localvimrc"
+	let g:localvimrc_whitelist="lvimrc.*"
+
+	"ALE"
+	let g:ale_lint_on_enter = 0
+	let g:ale_linters = {'cpp': ['clang']}
 
 	"neocomplcache"
 	let g:neocomplcache_enable_at_startup = 1
