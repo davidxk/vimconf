@@ -9,8 +9,8 @@ Download the repository [here](https://github.com/davidxk/vimconf/archive/master
 
 ### macOS and Linux
 ```bash
-git clone git@github.com:davidxk/vimconf.git
-pushd vimconf; chmod 700 install.sh; ./install.sh; popd
+git clone https://github.com/davidxk/vimconf.git
+pushd vimconf; ./install.sh; popd
 ```
 
 ## Features
