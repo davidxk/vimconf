@@ -27,12 +27,11 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 
 * [ALE](https://github.com/w0rp/ale)
 * [a.vim](https://github.com/vim-scripts/a.vim)
+* [clang complete](https://github.com/Rip-Rip/clang_complete)
 * [Emmet-vim](https://github.com/mattn/emmet-vim)
 * [Localvimrc](https://github.com/embear/vim-localvimrc)
-* [neocomplcache](https://github.com/Shougo/neocomplcache.vim)
 * [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [NERDTree](https://github.com/scrooloose/nerdtree)
-* [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
 * [ScrollColors](https://github.com/vim-scripts/ScrollColors)
 * [Surround.vim](http://github.com/tpope/vim-surround)
 * [tabular](https://github.com/godlygeek/tabular)
