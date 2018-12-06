@@ -225,11 +225,7 @@ if version >= 7.4
 
 		"Usage: :Diff filename
 		"Open a new window vertically on the file
-		command -nargs=1 Diff :vert diffsplit <args>
-
-		"Usage: Synctex
-		"Compile the current tex and display line under cursor with Skim
-		command -nargs=0 Synctex silent w | silent make | redraw! | execute '!/Applications/Skim.app/Contents/SharedSupport/displayline -b '.line('.').' %:t:r.pdf'
+		command -nargs=1 -complete=file Diff :vert diffsplit <args>
 
 		"Usage: :C   (called inside project root directory)
 		"Switch between C file and Header file
