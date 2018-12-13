@@ -108,6 +108,7 @@ if has("autocmd")
 		let vimsyn_folding = 'af'
 		autocmd FileType c,cpp,h,lex set foldmethod=syntax
 		autocmd FileType java,scala  set foldmethod=syntax
+		autocmd FileType go set foldmethod=syntax
 		autocmd FileType arduino set foldmethod=syntax
 	endif
 endif
@@ -148,6 +149,7 @@ nnoremap <Space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 "nnoremap on <leader>
 nnoremap <leader>tr :NERDTreeToggle<CR>
 nnoremap <leader>tl :TlistToggle<CR>
+nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>l :se<Space>columns=120<CR>
 nnoremap <leader>h :se<Space>columns=80<CR>
 nnoremap <leader>j :se<Space>lines=30<CR>
@@ -196,8 +198,8 @@ if version >= 7.4
 	if !exists(':Pickonly') && !exists(':Cdfiledir')
 		
 		"Usage: :Pickonly regex
-		"Delete all lines except lines with patter 'regex'
-		command -nargs=1 Pickonly g/^\(\(<args>\)\@!.\)*$/d
+		"Delete all lines that do not match patter 'regex'
+		command -nargs=1 Pickonly v/<args>/d
 		
 		"Usage: :Cdfiledir
 		"Change directory to current file's enclosing directory
@@ -252,13 +254,6 @@ if version >= 7.4
 	let g:ale_lint_on_enter = 0
 	let g:ale_linters = {'cpp': ['clang']}
 
-	"neocomplcache"
-	let g:neocomplcache_enable_at_startup = 1
-
-	"OmniCppComplete"
-	set completeopt=menu
-	let OmniCpp_MayCompleteScope = 1
-
 	"Taglist"
 	let Tlist_Show_One_File = 1
 	"If exuberant ctags not installed, disable Taglist
@@ -277,6 +272,12 @@ if version >= 7.4
 			call add(g:pathogen_disabled, 'taglist')
 		endif
 	endif
+
+	"Tagbar"
+	let g:tagbar_left = 1
+	let g:tagbar_width = &columns / 4
+	let g:tagbar_expand = 1
+	let g:tagbar_zoomwidth = &columns / 2
 
 	"#END of Plugins#"
 	call pathogen#infect()

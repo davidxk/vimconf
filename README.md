@@ -37,6 +37,7 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 * [tabular](https://github.com/godlygeek/tabular)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [pathogen.vim](http://github.com/tpope/vim-pathogen)
+* [vim-go](https://github.com/fatih/vim-go)
 * [vim-scala](https://github.com/derekwyatt/vim-scala)
 
 ### Customized Commands
