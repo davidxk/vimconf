@@ -1,5 +1,6 @@
 # Ignore everything
 *
+tags
 
 # Except
 !.gitignore
