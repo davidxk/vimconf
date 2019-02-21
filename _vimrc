@@ -64,6 +64,7 @@ if has("autocmd")
 	autocmd FileType go,perl,scala inoremap {<CR> {<CR>}<Esc>O
 	autocmd FileType go,perl,scala inoremap <leader>{ <Esc>A{<Enter>}<Esc>O
 	autocmd FileType go,perl,scala nnoremap <leader>{ A<space>{<Enter>}<Esc>O
+	autocmd FileType go set spell
 
 	"Markup languages
 	autocmd FileType html,jsp,xml set tabstop=2
@@ -109,6 +110,7 @@ if has("autocmd")
 		autocmd FileType c,cpp,h,lex set foldmethod=syntax
 		autocmd FileType java,scala  set foldmethod=syntax
 		autocmd FileType go set foldmethod=syntax
+		autocmd FileType rpcgen set foldmethod=syntax
 		autocmd FileType arduino set foldmethod=syntax
 	endif
 endif
@@ -232,6 +234,10 @@ if version >= 7.4
 		"Usage: :C   (called inside project root directory)
 		"Switch between C file and Header file
 		command -nargs=0 C call ToggleCAndHFile()
+
+		"Usage: :ClangFormat
+		"Run the clang-format standalone tool on your current buffer
+		command -nargs=0 ClangFormat :pyf findfile('clang-format.py', '/usr/local/Cellar/clang-format/**')
 		
 		"Typo saver
 		command -nargs=0 W w
@@ -252,7 +258,10 @@ if version >= 7.4
 
 	"ALE"
 	let g:ale_lint_on_enter = 0
-	let g:ale_linters = {'cpp': ['clang']}
+	let g:ale_linters = {'cpp': ['clang'], 'go': ['gobuild', 'gometalinter', 'gofmt', 'staticcheck', 'gosimple']}
+
+	"vim-go"
+	let g:go_fmt_command = "goimports"
 
 	"Taglist"
 	let Tlist_Show_One_File = 1
