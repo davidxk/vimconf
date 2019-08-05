@@ -5,7 +5,7 @@
 
 ## Installation
 ### Windows
-Download the repository [here](https://github.com/davidxk/vimconf/archive/master.zip) and click ```install.bat```. 
+Download the repository [here](https://github.com/davidxk/vimconf/archive/master.zip) and click `install.bat`. 
 
 ### macOS and Linux
 ```bash
@@ -39,6 +39,7 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 * [tagbar](https://github.com/majutsushi/tagbar)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 * [pathogen.vim](http://github.com/tpope/vim-pathogen)
+* [vim-markdown-folding](https://github.com/masukomi/vim-markdown-folding)
 * [vim-scala](https://github.com/derekwyatt/vim-scala)
 
 ### Customized Commands
