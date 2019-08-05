@@ -71,7 +71,6 @@ if has("autocmd")
 	autocmd FileType html,jsp,xml set shiftwidth=2
 
 	"Markdown language
-	autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 	autocmd FileType markdown inoremap <leader>> <Esc>A<br>
 	autocmd FileType markdown nnoremap <leader>> A<br><Esc>
 	autocmd FileType markdown nnoremap <C-L> [s1z=<C-O>
@@ -84,7 +83,6 @@ if has("autocmd")
 	autocmd FileType markdown set spell
 	autocmd FileType markdown nnoremap \expl i [= 
 	autocmd FileType markdown,text set spelllang=en
-	autocmd FileType markdown,text set foldmethod=marker
 	if(has("mac"))
 		"Local marked2 shortcut
 		autocmd FileType markdown nnoremap <leader>mk :silent !open -a marked\ 2 %<CR><CR>
@@ -102,7 +100,6 @@ if has("autocmd")
 
 	if has("syntax")
 		let r_syntax_folding = 1
-		let javaScript_fold = 1
 		let sh_fold_enabled = 1
 		let xml_syntax_folding = 1
 		let perl_fold = 1
@@ -111,6 +108,7 @@ if has("autocmd")
 		autocmd FileType java,scala  set foldmethod=syntax
 		autocmd FileType go set foldmethod=syntax
 		autocmd FileType rpcgen set foldmethod=syntax
+		autocmd FileType json set foldmethod=syntax
 		autocmd FileType arduino set foldmethod=syntax
 	endif
 endif
@@ -237,7 +235,7 @@ if version >= 7.4
 
 		"Usage: :ClangFormat
 		"Run the clang-format standalone tool on your current buffer
-		command -nargs=0 ClangFormat :pyf findfile('clang-format.py', '/usr/local/Cellar/clang-format/**')
+		command -nargs=0 ClangFormat :py3f /usr/local/Cellar/clang-format/**/clang-format.py
 		
 		"Typo saver
 		command -nargs=0 W w
@@ -258,7 +256,11 @@ if version >= 7.4
 
 	"ALE"
 	let g:ale_lint_on_enter = 0
-	let g:ale_linters = {'cpp': ['clang'], 'go': ['gobuild', 'gometalinter', 'gofmt', 'staticcheck', 'gosimple']}
+	let g:ale_linters = {
+		\'cpp': ['clang'],
+		\'go': ['gobuild', 'gometalinter', 'gofmt', 'staticcheck', 'gosimple']
+		\}
+	let g:ale_proto_protoc_gen_lint_options = '-I.'
 
 	"vim-go"
 	let g:go_fmt_command = "goimports"
@@ -290,7 +292,7 @@ if version >= 7.4
 
 	"#END of Plugins#"
 	call pathogen#infect()
-	colorscheme molokai
+	colorscheme desert
 
 
 	"END"

@@ -32,6 +32,7 @@ Selected from top 40 plugins in [vim.org](https://vim.sourceforge.io/scripts/scr
 * [Localvimrc](https://github.com/embear/vim-localvimrc)
 * [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [NERDTree](https://github.com/scrooloose/nerdtree)
+* [pgsql.vim](https://github.com/lifepillar/pgsql.vim)
 * [ScrollColors](https://github.com/vim-scripts/ScrollColors)
 * [Surround.vim](http://github.com/tpope/vim-surround)
 * [tabular](https://github.com/godlygeek/tabular)
