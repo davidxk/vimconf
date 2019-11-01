@@ -85,7 +85,7 @@ if has("autocmd")
 	autocmd FileType markdown,text set spelllang=en
 	if(has("mac"))
 		"Local marked2 shortcut
-		autocmd FileType markdown nnoremap <leader>mk :silent !open -a marked\ 2 %<CR><CR>
+		autocmd FileType markdown nnoremap <leader>mk :silent !open -a marked\ 2 "%"<CR><CR>
 		"Not supported on other systems
 		set shortmess+=c
 	endif
