@@ -15,8 +15,8 @@ pushd vimconf; ./install.sh; popd
 
 ## Features
 * Brackets auto-pairing
-* Space key folding toggle
 * Auto spell correction
+* Tab folding toggle
 * Handy customized vim commands
 * Supports C/C++, Python, Scala, Markdown, Perl, HTML/XML, etc. 
 

@@ -145,7 +145,7 @@ iabbrev inlcude include
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
 "nnoremap toggle folding
-nnoremap <Space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
+nnoremap <Tab> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 "nnoremap on <leader>
 nnoremap <leader>tr :NERDTreeToggle<CR>
 nnoremap <leader>tl :TlistToggle<CR>
