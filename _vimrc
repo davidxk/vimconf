@@ -144,9 +144,9 @@ iabbrev inlcude include
 "nnoremap for tabs
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
-"nnoremap toggle folding
-nnoremap <Tab> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
-nnoremap <S-Tab> @=(&foldlevel?'zM':'zR')<CR>
+"nnoremap of <Tab> is diabled because it affects <C-I>; use za and zi instead
+"nnoremap <Tab> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
+"nnoremap <S-Tab> @=(&foldlevel?'zM':'zR')<CR>
 "nnoremap on <leader>
 nnoremap <leader>tr :NERDTreeToggle<CR>
 nnoremap <leader>tl :TlistToggle<CR>
