@@ -252,9 +252,6 @@ if version >= 7.4
 	let g:pathogen_disabled = []
 	runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-	"localvimrc"
-	let g:localvimrc_whitelist="lvimrc.*"
-
 	"ALE"
 	let g:ale_lint_on_enter = 0
 	let g:ale_linters = {
